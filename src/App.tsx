@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +8,7 @@ import Index from "./pages/Index";
 import Overview from "./pages/Overview";
 import MyAgents from "./pages/MyAgents";
 import Playground from "./pages/Playground";
+import PlaygroundDev from "./pages/PlaygroundDev";
 import FlowBuilder from "./pages/FlowBuilder";
 import WebChatbotCreator from "./pages/WebChatbotCreator";
 import BringYourOwn from "./pages/tools/BringYourOwn";
@@ -60,6 +60,7 @@ const App = () => (
             <Route index element={<Overview />} />
             <Route path="my-agents" element={<MyAgents />} />
             <Route path="playground" element={<Playground />} />
+            <Route path="playground-dev" element={<PlaygroundDev />} />
             <Route path="flow" element={<FlowBuilder />} />
             <Route path="chatbot" element={<WebChatbotCreator />} />
             <Route path="tools/byo" element={<BringYourOwn />} />

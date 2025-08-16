@@ -1,11 +1,17 @@
-
 import React from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { Search, Plus, ChevronDown, ChevronRight, Settings, LayoutGrid, Bot, Play, GitBranch, MessageSquare, FileText, Cloud, Database, Lock, HelpCircle } from 'lucide-react';
 import { activeBg, pill } from '@/components/Design';
 
-const AppShell = () => {
+export const AppShell = () => {
   const location = useLocation();
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
 
   const SidebarSection = ({ title, items, isExpanded = true }: { 
     title: string; 
@@ -55,6 +61,7 @@ const AppShell = () => {
     { name: 'Overview', path: '/', icon: <LayoutGrid className="w-4 h-4" /> },
     { name: 'My Agents', path: '/my-agents', icon: <Bot className="w-4 h-4" /> },
     { name: 'Playground', path: '/playground', icon: <Play className="w-4 h-4" /> },
+    { name: 'Dev Playground', path: '/playground-dev', icon: <Settings className="w-4 h-4" /> },
     { name: 'Agents Flow Builder', path: '/flow', icon: <GitBranch className="w-4 h-4" /> },
     { name: 'Web Chatbot Creator', path: '/chatbot', icon: <MessageSquare className="w-4 h-4" /> },
   ];
