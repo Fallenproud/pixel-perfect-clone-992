@@ -29,15 +29,24 @@ const agents = [
 
 const Index = () => {
   return (
-    <div className="flex h-screen bg-background">
-      <Sidebar />
+    <div className="flex h-screen bg-background overflow-hidden">
+      {/* Sidebar - Hidden on mobile, visible on desktop */}
+      <div className="hidden lg:block">
+        <Sidebar />
+      </div>
+      
+      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-1 overflow-y-auto p-6">
-          <div className="grid grid-cols-5 gap-4">
-            {agents.map((agent, index) => (
-              <AgentCard key={index} {...agent} />
-            ))}
+        
+        {/* Agent Grid */}
+        <main className="flex-1 overflow-y-auto">
+          <div className="p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+              {agents.map((agent, index) => (
+                <AgentCard key={index} {...agent} />
+              ))}
+            </div>
           </div>
         </main>
       </div>
