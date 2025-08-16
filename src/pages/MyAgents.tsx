@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { card, pill, accent } from '@/components/Design';
-import { Search, Plus, Edit, Copy, Trash2, Star } from 'lucide-react';
+import { Search, Plus, Edit, Copy, Trash2, Star, Bot } from 'lucide-react';
 
 const MyAgents = () => {
   const [searchTerm, setSearchTerm] = useState('');
